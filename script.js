@@ -52,3 +52,45 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open(whatsappLink, "_blank");
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Load HOME Section
+    fetch("index.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("index").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading Home section:", error));
+
+      fetch("about.html")
+      .then(response => response.text())  // Fetch About section
+      .then(data => {
+        document.getElementById("about").innerHTML = data; // Insert into the page
+      })
+      .catch(error => console.error("Error loading About section:", error));
+  
+    // Load Expertise Section
+    fetch("expertise.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("expertise").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading Expertise section:", error));
+    
+    //Load projects Section
+    fetch("projects.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("projects").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading Project section:", error));
+
+    // Load Contact Section
+    fetch("contact.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("contact").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading Contact section:", error));
+  });
+  
